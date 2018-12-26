@@ -6,6 +6,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 import Banner from '../components/Banner'
+import NavBar from '../components/NavBar'
 import React from 'react'
 import Tile from '../components/Tile'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -25,6 +26,7 @@ const StyledTilesContainer = styled.div`
 
 const IndexPage = () => (
   <StyledPage>
+    <NavBar alt />
     <Banner />
     <StyledTilesContainer>
       <Tile
