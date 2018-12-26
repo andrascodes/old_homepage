@@ -57,27 +57,36 @@ const StyledButton = styled.button`
   ${props =>
     props.primary === true
       ? css`
-          background-color: #000;
+          background-color: #fff;
           box-shadow: none;
-          color: #fff;
+          color: #242943;
+
+          &:hover {
+            background-color: #9bf1ff;
+            color: #242943 !important;
+          }
+
+          &:active {
+            background-color: #53e3fb;
+          }
         `
       : css`
           background-color: transparent;
-          box-shadow: inset 0 0 0 2px #000;
-          color: #000;
+          box-shadow: inset 0 0 0 2px #fff;
+          color: #fff;
+
+          &:hover {
+            box-shadow: inset 0 0 0 2px #9bf1ff;
+            color: #9bf1ff;
+            border-bottom-color: transparent;
+          }
+
+          &:active {
+            background-color: rgba(155, 241, 255, 0.1);
+            box-shadow: inset 0 0 0 2px #53e3fb;
+            color: #53e3fb;
+          }
         `}
-
-  &:hover {
-    box-shadow: inset 0 0 0 2px #9bf1ff;
-    color: #9bf1ff;
-    border-bottom-color: transparent;
-  }
-
-  &:active {
-    background-color: rgba(155, 241, 255, 0.1);
-    box-shadow: inset 0 0 0 2px #53e3fb;
-    color: #53e3fb;
-  }
 
   &:focus {
     outline: none;
