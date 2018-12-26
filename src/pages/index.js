@@ -1,19 +1,50 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import {
+  faAngleRight,
+  faArrowRight,
+  faChevronRight,
+  faLongArrowAltRight,
+} from '@fortawesome/free-solid-svg-icons'
 
-import Layout from '../components/layout'
-import Image from '../components/image'
+import Banner from '../components/Banner'
+import React from 'react'
+import Tile from '../components/Tile'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import styled from 'styled-components'
+
+library.add(faAngleRight, faArrowRight, faChevronRight, faLongArrowAltRight)
+
+const StyledPage = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const StyledTilesContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
 
 const IndexPage = () => (
-  <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <StyledPage>
+    <Banner />
+    <StyledTilesContainer>
+      <Tile
+        title="Aliquam"
+        subtitle="Ipsum Dolor Sit Amet"
+        overlayColor="#6dc2df"
+      />
+      <Tile
+        title="Tempus"
+        subtitle="Feugiat Amet Tempus"
+        overlayColor="#8d82c4"
+      />
+      <Tile
+        title="Magna"
+        subtitle="Lorem Etiam Nullam"
+        overlayColor="#ec8d81"
+      />
+      <Tile title="Ipsum" subtitle="Nisl Sed Aliquam" overlayColor="#e7b788" />
+    </StyledTilesContainer>
+  </StyledPage>
 )
 
 export default IndexPage
