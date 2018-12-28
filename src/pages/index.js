@@ -30,21 +30,15 @@ const IndexPage = () => (
     <Banner />
     <StyledTilesContainer>
       <Tile
-        title="Aliquam"
+        title="About Me"
         subtitle="Ipsum Dolor Sit Amet"
         overlayColor="#6dc2df"
       />
       <Tile
-        title="Tempus"
+        title="Portfolio"
         subtitle="Feugiat Amet Tempus"
         overlayColor="#8d82c4"
       />
-      <Tile
-        title="Magna"
-        subtitle="Lorem Etiam Nullam"
-        overlayColor="#ec8d81"
-      />
-      <Tile title="Ipsum" subtitle="Nisl Sed Aliquam" overlayColor="#e7b788" />
     </StyledTilesContainer>
   </StyledPage>
 )

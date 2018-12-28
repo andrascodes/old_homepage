@@ -153,7 +153,7 @@ const NavBar = props => {
   return (
     <StyledNavBar {...props}>
       <StyledLogo>
-        <strong>Forty</strong> <span>By HTML5 Up</span>
+        <strong>András</strong> <span>Szücs</span>
       </StyledLogo>
       <StyledNav>
         <NavItems>

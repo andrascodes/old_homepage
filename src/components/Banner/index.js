@@ -103,7 +103,7 @@ const Banner = () => {
   return (
     <StyledBanner>
       <StyledInner>
-        <StyledTitle>Hi, my name is Forty</StyledTitle>
+        <StyledTitle>Hi, my name is András</StyledTitle>
         <StyledHorizontalLine />
         <StyledSubtitleContainer>
           <StyledSubtitle>
