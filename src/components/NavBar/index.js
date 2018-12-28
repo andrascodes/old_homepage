@@ -4,22 +4,25 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const StyledNavBar = styled.div`
+  height: 3.07rem;
+  letter-spacing: 0.236rem;
+  /* // 3.1em */
+  line-height: 4.1;
+
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  display: flex;
+  width: 100%;
+  margin: 0;
+
   color: white;
   background-color: #2a2f4a;
-  box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
-  cursor: default;
-  display: flex;
-  font-weight: 600;
-  height: 3.25em;
-  left: 0;
-  letter-spacing: 0.25em;
-  line-height: 3.25em;
-  margin: 0;
-  position: fixed;
+  box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.15);
+  font-weight: bold;
   text-transform: uppercase;
-  top: 0;
-  width: 100%;
-  z-index: 10000;
+  cursor: default;
 
   ${props =>
     props.alt === true
@@ -35,25 +38,39 @@ const StyledNavBar = styled.div`
 `
 
 const StyledLogo = styled.div`
+  font-size: 0.755rem;
   border: 0;
   display: inline-block;
-  font-size: 0.8em;
   height: inherit;
-  line-height: inherit;
-  padding: 0 1.5em;
-  color: inherit;
+  padding: 0 1.14rem;
   text-decoration: none;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  cursor: pointer;
 
   & strong {
-    font-weight: 600;
-    background-color: #fff;
+    line-height: 1.24rem;
     color: #242943;
+    background-color: #fff;
     display: inline-block;
-    line-height: 1.65rem;
-    margin-right: 0.325rem;
-    padding: 0 0.125rem 0 0.375rem;
+    margin-right: 0.25rem;
+    padding: 0 0.1rem 0 0.28rem;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+
+  &:hover {
+    color: #9bf1ff;
+  }
+
+  &:hover strong {
+    background-color: #9bf1ff;
+  }
+
+  &:active {
+    color: #53e3fb;
+  }
+
+  &:active strong {
+    background-color: #53e3fb;
   }
 `
 
@@ -68,10 +85,8 @@ const MenuButton = styled.div`
 
   & p {
     cursor: pointer;
-    /* padding-right: 1.5em; */
     display: block;
-    font-size: 0.8em;
-    /* padding: 0 0.75em; */
+    font-size: 0.75rem;
     transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
     margin-bottom: 0;
   }
@@ -101,8 +116,8 @@ const HamburgerIcon = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding-right: 1rem;
-  padding-left: 0.5rem;
+  padding-right: 1.5rem;
+  padding-left: 0.42rem;
 
   & line {
     stroke-width: 2px;
@@ -112,6 +127,8 @@ const HamburgerIcon = styled.div`
 
 const NavItems = styled.ul`
   display: flex;
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
 
   & li {
     list-style: none;
@@ -136,7 +153,7 @@ const NavBar = props => {
   return (
     <StyledNavBar {...props}>
       <StyledLogo>
-        <strong>András</strong> <span>Szücs</span>
+        <strong>Forty</strong> <span>By HTML5 Up</span>
       </StyledLogo>
       <StyledNav>
         <NavItems>
