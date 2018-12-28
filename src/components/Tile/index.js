@@ -12,14 +12,14 @@ const StyledTile = styled.div`
 
   height: 40vh;
   max-height: 40rem;
-  min-height: 23rem;
+  min-height: 21.75rem;
 
   display: flex;
   align-items: center;
 
   cursor: pointer;
   overflow: hidden;
-  padding: 4rem 4rem 2rem;
+  padding: 3.78rem 3.778rem 1.89rem;
   position: relative;
   transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease;
 
@@ -74,7 +74,8 @@ const StyledInner = styled.div`
 const StyledTitle = styled.h3`
   margin: 0;
   width: calc(100% + 0.5rem);
-  font-size: 1.75rem;
+  font-size: 1.65rem;
+  letter-spacing: 0.02rem;
   font-weight: 600;
   line-height: 1.65;
 `
@@ -84,14 +85,14 @@ const StyledHorizontalLine = styled.div`
   content: '';
   display: block;
   height: 2px;
-  margin: 0.325rem 0 0.5rem;
+  margin: 0.52rem 0 0.84rem;
   width: 100%;
 `
 
 const StyledSubtitle = styled.p`
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.15rem;
   margin-bottom: 0;
   text-transform: uppercase;
 `
