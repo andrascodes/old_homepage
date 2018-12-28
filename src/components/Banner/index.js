@@ -12,24 +12,25 @@ const StyledBanner = styled.div`
   align-items: center;
   background-attachment: fixed;
   background-image: url('https://gatsby-forty.surge.sh/static/banner-22e3335cf4be5dddb7a51870b0e3203f.jpg');
-  background-position: 50%;
+  /* background-position: 50%; */
+  background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
   border-bottom: 0 !important;
   cursor: default;
   display: flex;
-  margin-bottom: -3.25em;
-  padding: 6em 0 2em;
+  margin-bottom: -3.25rem;
+  padding: 11.5rem 0 2rem;
+  /* padding: 10.8rem 0 2rem; */
   position: relative;
-  top: -3.25em;
+  top: -3.25rem;
 `
 
 const StyledInner = styled.div`
   margin: 0 auto;
-  max-width: 65em;
-  width: calc(100% - 6em);
+  max-width: 61.4rem;
+  width: calc(100% - 6rem);
 
-  padding: 0 !important;
   position: relative;
   transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease,
     -webkit-filter 0.5s ease;
@@ -64,7 +65,9 @@ const StyledColorOverlay = styled.div`
 `
 
 const StyledTitle = styled.h1`
-  font-size: 3.25rem;
+  font-size: 3.08rem;
+  margin-bottom: 1.8rem;
+  letter-spacing: 0.02rem;
 `
 
 const StyledHorizontalLine = styled.div`
@@ -79,13 +82,17 @@ const StyledHorizontalLine = styled.div`
 
 const StyledSubtitleContainer = styled.div`
   display: flex;
+  align-items: center;
+  margin-bottom: 1.889rem;
 `
 
 const StyledSubtitle = styled.p`
-  font-size: 0.7rem;
+  font-size: 0.67rem;
   font-weight: 600;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.161rem;
   text-transform: uppercase;
+  margin-bottom: 0;
+  margin-right: 1.1rem;
 `
 
 const StyledButtonIcon = styled(FontAwesomeIcon)`
@@ -96,7 +103,7 @@ const Banner = () => {
   return (
     <StyledBanner>
       <StyledInner>
-        <StyledTitle>Hi, my name is András</StyledTitle>
+        <StyledTitle>Hi, my name is Forty</StyledTitle>
         <StyledHorizontalLine />
         <StyledSubtitleContainer>
           <StyledSubtitle>
@@ -104,8 +111,8 @@ const Banner = () => {
             <br />
             and released under the creative commons.
           </StyledSubtitle>
-          <Button primary>
-            Big
+          <Button>
+            Get Started
             <StyledButtonIcon icon="arrow-right" />
           </Button>
         </StyledSubtitleContainer>

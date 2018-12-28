@@ -4,11 +4,13 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const StyledButton = styled.button`
-  margin-left: 1.5rem;
   border: 0;
   border-radius: 0;
   cursor: pointer;
-  display: inline-block;
+  /* display: inline-block; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
     color 0.2s ease-in-out;
@@ -17,7 +19,6 @@ const StyledButton = styled.button`
   letter-spacing: 0.25em;
   padding: 0 1.75em;
   height: 3.5em;
-  line-height: 3.5em;
 
   ${props =>
     props.fit === true
@@ -40,7 +41,7 @@ const StyledButton = styled.button`
         `
       default:
         return css`
-          font-size: 0.8rem;
+          font-size: 0.76rem;
         `
     }
   }}
