@@ -2,8 +2,10 @@ import {
   faAngleRight,
   faArrowRight,
   faChevronRight,
+  faEnvelope,
   faLongArrowAltRight,
 } from '@fortawesome/free-solid-svg-icons'
+import { faLinkedin, faTwitter } from '@fortawesome/fontawesome-free-brands'
 
 import Banner from '../components/Banner'
 import NavBar from '../components/NavBar'
@@ -13,6 +15,15 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import styled from 'styled-components'
 
 library.add(faAngleRight, faArrowRight, faChevronRight, faLongArrowAltRight)
+library.add(
+  faAngleRight,
+  faArrowRight,
+  faChevronRight,
+  faLongArrowAltRight,
+  faEnvelope,
+  faLinkedin,
+  faTwitter
+)
 
 const StyledPage = styled.div`
   display: flex;
