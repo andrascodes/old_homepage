@@ -7,7 +7,6 @@ const StyledButton = styled.button`
   border: 0;
   border-radius: 0;
   cursor: pointer;
-  /* display: inline-block; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,6 +41,14 @@ const StyledButton = styled.button`
       default:
         return css`
           font-size: 0.76rem;
+
+          @media screen and (max-width: 1680px) {
+            font-size: 0.6rem;
+          }
+
+          @media screen and (max-width: 1280px) {
+            font-size: 0.53rem;
+          }
         `
     }
   }}

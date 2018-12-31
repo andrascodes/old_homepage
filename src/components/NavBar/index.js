@@ -6,7 +6,6 @@ import React from 'react'
 const StyledNavBar = styled.div`
   height: 3.07rem;
   letter-spacing: 0.236rem;
-  /* // 3.1em */
   line-height: 4.1;
 
   position: fixed;
@@ -35,6 +34,29 @@ const StyledNavBar = styled.div`
           transition-delay: 0.75s;
         `
       : ''}
+
+  @media screen and (max-width: 1680px) {
+    letter-spacing: 0.2rem;
+    line-height: 4;
+  }
+
+  @media screen and (max-width: 1280px) {
+    letter-spacing: 0.17rem;
+  }
+
+  @media screen and (max-width: 980px) {
+    line-height: 4.1;
+  }
+
+  @media screen and (max-width: 736px) {
+    line-height: 3.5;
+  }
+
+  @media screen and (max-width: 480px) {
+  }
+
+  @media screen and (max-width: 360px) {
+  }
 `
 
 const StyledLogo = styled.div`
@@ -72,6 +94,41 @@ const StyledLogo = styled.div`
   &:active strong {
     background-color: #53e3fb;
   }
+
+  @media screen and (max-width: 1680px) {
+    font-size: 0.62rem;
+    padding: 0 0 0 0.9rem;
+
+    & strong {
+      line-height: 1rem;
+      margin-right: 0.18rem;
+      padding: 0 0.07rem 0 0.25rem;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    font-size: 0.53rem;
+    padding: 0 0.8rem;
+
+    & strong {
+      line-height: 0.9rem;
+      margin-right: 0.17rem;
+      padding: 0 0.05rem 0 0.2rem;
+    }
+  }
+
+  @media screen and (max-width: 736px) {
+    padding: 0 0.55rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    & span {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+  }
 `
 
 const StyledNav = styled.nav`
@@ -108,7 +165,7 @@ const MenuButton = styled.div`
   }
 
   @media screen and (max-width: 980px) {
-    display: flex;
+    /* display: flex; */
   }
 `
 
@@ -144,8 +201,32 @@ const NavItems = styled.ul`
     color: #9bf1ff;
   }
 
+  @media screen and (max-width: 1680px) {
+    font-size: 0.62rem;
+  }
+
+  @media screen and (max-width: 1280px) {
+    font-size: 0.53rem;
+  }
+
   @media screen and (max-width: 980px) {
-    display: none;
+    /* display: none; */
+  }
+
+  @media screen and (max-width: 736px) {
+    & li {
+      padding-right: 1.2rem;
+    }
+
+    & li:last-child {
+      padding-right: 0.55rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+  }
+
+  @media screen and (max-width: 360px) {
   }
 `
 
@@ -153,7 +234,7 @@ const NavBar = props => {
   return (
     <StyledNavBar {...props}>
       <StyledLogo>
-        <strong>András</strong> <span>Szücs</span>
+        <strong>Forty</strong> <span>BY HTML5 UP</span>
       </StyledLogo>
       <StyledNav>
         <NavItems>

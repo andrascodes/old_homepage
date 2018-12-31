@@ -12,14 +12,40 @@ const StyledTile = styled.div`
 
   height: 40vh;
   max-height: 40rem;
-  min-height: 21.75rem;
+  min-height: 21.72rem;
+
+  @media screen and (max-width: 1680px) {
+    min-height: 17.9rem;
+    padding: 0rem 3rem 0rem;
+  }
+
+  @media screen and (max-width: 1280px) {
+    height: 30vh;
+    max-height: 30rem;
+    min-height: 13.4rem;
+    padding: 0rem 2rem 0rem;
+  }
+
+  @media screen and (max-width: 736px) {
+    height: 27.5vh;
+    max-height: unset;
+    min-height: 0;
+    padding: 0rem 1rem 0rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 34vh;
+  }
+
+  @media screen and (max-width: 360px) {
+  }
 
   display: flex;
   align-items: center;
 
   cursor: pointer;
   overflow: hidden;
-  padding: 3.78rem 3.778rem 1.89rem;
+  padding: 0rem 3.778rem 0rem;
   position: relative;
   transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease;
 
@@ -67,7 +93,6 @@ const StyledGreyOverlay = styled(StyledOverlay)`
 const StyledInner = styled.div`
   position: relative;
   z-index: 3;
-  margin-bottom: 2em;
   width: max-content;
 `
 
@@ -75,9 +100,21 @@ const StyledTitle = styled.h3`
   margin: 0;
   width: calc(100% + 0.5rem);
   font-size: 1.65rem;
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.025rem;
   font-weight: 600;
   line-height: 1.65;
+
+  @media screen and (max-width: 1680px) {
+    font-size: 1.35rem;
+  }
+
+  @media screen and (max-width: 1280px) {
+    font-size: 1.15rem;
+  }
+
+  @media screen and (max-width: 736px) {
+    font-size: 1rem;
+  }
 `
 
 const StyledHorizontalLine = styled.div`
@@ -85,16 +122,38 @@ const StyledHorizontalLine = styled.div`
   content: '';
   display: block;
   height: 2px;
-  margin: 0.52rem 0 0.84rem;
+  margin: 0.54rem 0 0.84rem;
   width: 100%;
+
+  @media screen and (max-width: 1680px) {
+    margin: 0.45rem 0 0.65rem;
+  }
+
+  @media screen and (max-width: 1280px) {
+    margin: 0.38rem 0 0.6rem;
+  }
+
+  @media screen and (max-width: 736px) {
+    margin: 0.33rem 0 0.5rem;
+  }
 `
 
 const StyledSubtitle = styled.p`
   font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.155rem;
   margin-bottom: 0;
   text-transform: uppercase;
+
+  @media screen and (max-width: 1680px) {
+    font-size: 0.57rem;
+    letter-spacing: 0.13rem;
+  }
+
+  @media screen and (max-width: 1280px) {
+    font-size: 0.48rem;
+    letter-spacing: 0.11rem;
+  }
 `
 
 const Tile = props => (

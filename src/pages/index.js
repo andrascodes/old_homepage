@@ -8,13 +8,14 @@ import {
 import { faLinkedin, faTwitter } from '@fortawesome/fontawesome-free-brands'
 
 import Banner from '../components/Banner'
+import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 import NavBar from '../components/NavBar'
 import React from 'react'
 import Tile from '../components/Tile'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import styled from 'styled-components'
 
-library.add(faAngleRight, faArrowRight, faChevronRight, faLongArrowAltRight)
 library.add(
   faAngleRight,
   faArrowRight,
@@ -28,6 +29,7 @@ library.add(
 const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: #2a2f4a;
 `
 
 const StyledTilesContainer = styled.div`
@@ -41,16 +43,18 @@ const IndexPage = () => (
     <Banner />
     <StyledTilesContainer>
       <Tile
-        title="About Me"
+        title="Aliquam"
         subtitle="Ipsum Dolor Sit Amet"
         overlayColor="#6dc2df"
       />
       <Tile
-        title="Portfolio"
+        title="Tempus"
         subtitle="Feugiat Amet Tempus"
         overlayColor="#8d82c4"
       />
     </StyledTilesContainer>
+    <Contact />
+    <Footer />
   </StyledPage>
 )
 
