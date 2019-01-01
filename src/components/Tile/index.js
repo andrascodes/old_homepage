@@ -37,9 +37,6 @@ const StyledTile = styled.div`
     height: 34vh;
   }
 
-  @media screen and (max-width: 360px) {
-  }
-
   display: flex;
   align-items: center;
 

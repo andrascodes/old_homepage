@@ -24,7 +24,7 @@ const StyledNavBar = styled.div`
   cursor: default;
 
   ${props =>
-    props.alt === true
+    props.transparent === true
       ? css`
           animation: none;
           background-color: transparent;
@@ -32,6 +32,14 @@ const StyledNavBar = styled.div`
           position: absolute;
           transition: opacity 2.5s ease;
           transition-delay: 0.75s;
+        `
+      : ''}
+
+  opacity: 0;
+  ${props =>
+    props.loaded
+      ? css`
+          opacity: 1;
         `
       : ''}
 
@@ -223,10 +231,16 @@ const NavItems = styled.ul`
     }
   }
 
-  @media screen and (max-width: 480px) {
-  }
-
   @media screen and (max-width: 360px) {
+    margin-left: 0;
+
+    & li {
+      padding-right: 1rem;
+    }
+
+    & li:last-child {
+      padding-right: 0.55rem;
+    }
   }
 `
 
@@ -262,12 +276,12 @@ const NavBar = props => {
   )
 }
 
-NavBar.PropTypes = {
-  alt: PropTypes.bool,
+NavBar.propTypes = {
+  transparent: PropTypes.bool,
 }
 
 NavBar.defaultProps = {
-  alt: false,
+  transparent: false,
 }
 
 export default NavBar

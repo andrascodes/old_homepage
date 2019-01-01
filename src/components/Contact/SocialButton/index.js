@@ -18,13 +18,26 @@ const StyledButton = styled.button`
     switch (props.size) {
       case 'large':
         return css`
-          height: 5rem;
-          width: 5rem;
+          height: 4rem;
+          width: 4rem;
+          font-size: 2rem;
+
+          @media screen and (max-width: 1280px) {
+            height: 3rem;
+            width: 3rem;
+            font-size: 1.5rem;
+          }
+
+          @media screen and (max-width: 1000px) {
+            height: 2rem;
+            width: 2rem;
+            font-size: 1rem;
+          }
         `
       default:
         return css`
-          height: 2rem;
-          width: 2rem;
+          height: 1.75rem;
+          width: 1.75rem;
         `
     }
   }}
@@ -45,7 +58,7 @@ const StyledButton = styled.button`
 
 const SocialButton = props => (
   <StyledButton {...props}>
-    <FontAwesomeIcon icon={props.icon} size="2x" />
+    <FontAwesomeIcon icon={props.icon} />
   </StyledButton>
 )
 

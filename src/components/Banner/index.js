@@ -1,7 +1,8 @@
+import styled, { css } from 'styled-components'
+
 import Button from '../Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import styled from 'styled-components'
 
 const StyledBanner = styled.div`
   color: white;
@@ -57,9 +58,22 @@ const StyledInner = styled.div`
   width: calc(100% - 6rem);
 
   position: relative;
+  opacity: 0;
+  filter: blur(0.125em);
+  transform: translateX(-0.5em);
   transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease,
     -webkit-filter 0.5s ease;
   z-index: 2;
+
+  ${props =>
+    props.loaded === true
+      ? css`
+          opacity: 1;
+          filter: none;
+          transform: translateX(0);
+          /* transform: */
+        `
+      : ''}
 
   @media screen and (max-width: 1680px) {
     width: calc(100% - 4.65rem);
@@ -162,7 +176,7 @@ const StyledSubtitleContainer = styled.div`
 
   @media screen and (max-width: 736px) {
     flex-direction: column;
-    align-items: end;
+    align-items: flex-start;
     margin-bottom: 2rem;
   }
 `
@@ -206,10 +220,10 @@ const StyledButtonIcon = styled(FontAwesomeIcon)`
   margin-left: 0.7rem;
 `
 
-const Banner = () => {
+const Banner = props => {
   return (
     <StyledBanner>
-      <StyledInner>
+      <StyledInner {...props}>
         <StyledTitle>Hi, my name is Forty</StyledTitle>
         <StyledHorizontalLine />
         <StyledSubtitleContainer>
@@ -220,7 +234,7 @@ const Banner = () => {
           </StyledSubtitle>
           <Button>
             Get started
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="36"
               height="24"
@@ -235,8 +249,8 @@ const Banner = () => {
               <line x1="0" y1="12" x2="34" y2="12" />
               <line x1="25" y1="4" x2="34" y2="12.5" />
               <line x1="25" y1="20" x2="34" y2="11.5" />
-            </svg>
-            {/* <StyledButtonIcon icon="arrow-right" /> */}
+            </svg> */}
+            <StyledButtonIcon icon="arrow-right" />
           </Button>
         </StyledSubtitleContainer>
       </StyledInner>

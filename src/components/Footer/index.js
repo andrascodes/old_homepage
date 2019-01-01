@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components'
-
 import PropTypes from 'prop-types'
 import React from 'react'
 import SocialButton from '../Contact/SocialButton'
+import styled from 'styled-components'
 
 const StyledFooter = styled.div`
   display: flex;
