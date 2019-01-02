@@ -58,7 +58,7 @@ class IndexPage extends Component {
     return (
       <StyledPage>
         <NavBar transparent loaded={this.state.loaded} />
-        <Banner loaded={this.state.loaded} />
+        <Banner loaded={this.state.loaded} index />
         <StyledTilesContainer>
           <Tile
             title="Aliquam"

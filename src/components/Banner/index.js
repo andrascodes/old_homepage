@@ -2,13 +2,21 @@ import styled, { css } from 'styled-components'
 
 import Button from '../Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
 import React from 'react'
 
 const StyledBanner = styled.div`
   color: white;
   height: 75vh;
   max-height: 50rem;
-  min-height: 29rem;
+  ${props =>
+    props.index === true
+      ? css`
+          min-height: 28.4rem;
+        `
+      : css`
+          min-height: 22.7rem;
+        `}
 
   align-items: center;
   background-attachment: fixed;
@@ -67,7 +75,6 @@ const StyledInner = styled.div`
   z-index: 2;
 
   ${props =>
-    props.loaded === true
     props.loaded === true || props.loaded === undefined
       ? css`
           opacity: 1;
@@ -223,42 +230,50 @@ const StyledButtonIcon = styled(FontAwesomeIcon)`
 
 const Banner = props => {
   return (
-    <StyledBanner>
     <StyledBanner {...props}>
       <StyledInner {...props}>
-        <StyledTitle>Hi, my name is Forty</StyledTitle>
+        {props.index === true ? (
+          <StyledTitle>Hi, my name is Forty</StyledTitle>
+        ) : (
+          <StyledTitle>Landing</StyledTitle>
+        )}
         <StyledHorizontalLine />
         <StyledSubtitleContainer>
-          <StyledSubtitle>
-            A responsive site template designed by HTML5 UP
-            <br />
-            and released under the creative commons.
-          </StyledSubtitle>
-          <Button>
-            Get started
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="36"
-              height="24"
-              viewBox="0 0 36 24"
-              preserveAspectRatio="none"
-              style={{
-                strokeWidht: '2px',
-                stroke: '#fff',
-                marginLeft: '0.3rem',
-              }}
-            >
-              <line x1="0" y1="12" x2="34" y2="12" />
-              <line x1="25" y1="4" x2="34" y2="12.5" />
-              <line x1="25" y1="20" x2="34" y2="11.5" />
-            </svg> */}
-            <StyledButtonIcon icon="arrow-right" />
-          </Button>
+          {props.index === true ? (
+            <StyledSubtitle>
+              A responsive site template designed by HTML5 UP
+              <br />
+              and released under the creative commons.
+            </StyledSubtitle>
+          ) : (
+            <StyledSubtitle>
+              Lorem ipsum dolor sit amet nullam consequat
+              <br />
+              sed veroeros. tempus adipiscing nulla.
+            </StyledSubtitle>
+          )}
+
+          {props.index === true ? (
+            <Button>
+              Get started
+              <StyledButtonIcon icon="arrow-right" />
+            </Button>
+          ) : (
+            ''
+          )}
         </StyledSubtitleContainer>
       </StyledInner>
       <StyledColorOverlay />
     </StyledBanner>
   )
+}
+
+Banner.propTypes = {
+  index: PropTypes.bool,
+}
+
+Banner.defaultProps = {
+  index: false,
 }
 
 export default Banner
