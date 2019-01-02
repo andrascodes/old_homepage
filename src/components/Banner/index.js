@@ -24,6 +24,7 @@ const StyledBanner = styled.div`
   position: relative;
 
   @media screen and (max-width: 1680px) {
+    min-height: 23.35rem;
     padding: 2rem 0 0 0;
   }
 
@@ -67,11 +68,11 @@ const StyledInner = styled.div`
 
   ${props =>
     props.loaded === true
+    props.loaded === true || props.loaded === undefined
       ? css`
           opacity: 1;
           filter: none;
           transform: translateX(0);
-          /* transform: */
         `
       : ''}
 
@@ -223,6 +224,7 @@ const StyledButtonIcon = styled(FontAwesomeIcon)`
 const Banner = props => {
   return (
     <StyledBanner>
+    <StyledBanner {...props}>
       <StyledInner {...props}>
         <StyledTitle>Hi, my name is Forty</StyledTitle>
         <StyledHorizontalLine />

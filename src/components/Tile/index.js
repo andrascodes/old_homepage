@@ -27,7 +27,7 @@ const StyledTile = styled.div`
   }
 
   @media screen and (max-width: 736px) {
-    height: 27.5vh;
+    height: 10.58rem;
     max-height: unset;
     min-height: 0;
     padding: 0rem 1rem 0rem;

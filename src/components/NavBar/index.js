@@ -37,7 +37,7 @@ const StyledNavBar = styled.div`
 
   opacity: 0;
   ${props =>
-    props.loaded
+    props.loaded === true || props.loaded === undefined
       ? css`
           opacity: 1;
         `
