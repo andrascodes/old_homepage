@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -67,7 +68,7 @@ const StyledNavBar = styled.div`
   }
 `
 
-const StyledLogo = styled.div`
+const StyledLogoLink = styled(Link)`
   font-size: 0.755rem;
   border: 0;
   display: inline-block;
@@ -199,6 +200,7 @@ const NavItems = styled.ul`
     list-style: none;
     padding-right: 1.5rem;
     cursor: pointer;
+    text-shadow: 0px 2px 7px #000;
   }
 
   & li:hover {
@@ -231,29 +233,51 @@ const NavItems = styled.ul`
     }
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 480px) {
     margin-left: 0;
 
     & li {
       padding-right: 1rem;
     }
+  }
+
+  @media screen and (max-width: 360px) {
+    & li {
+      padding-right: 0.6rem;
+    }
 
     & li:last-child {
-      padding-right: 0.55rem;
+      padding-right: 0.3rem;
     }
   }
 `
 
+const NavBarLink = props => (
+  <Link
+    to={props.to}
+    activeStyle={{
+      color: '#9bf1ff',
+      cursor: 'default',
+    }}
+  >
+    {props.children}
+  </Link>
+)
+
 const NavBar = props => {
   return (
     <StyledNavBar {...props}>
-      <StyledLogo>
-        <strong>Forty</strong> <span>BY HTML5 UP</span>
-      </StyledLogo>
+      <StyledLogoLink to="/" activeStyle={{ cursor: 'default' }}>
+        <strong>{props.logoTitle}</strong> <span>{props.logoSubtitle}</span>
+      </StyledLogoLink>
       <StyledNav>
         <NavItems>
-          <li>About Me</li>
-          <li>Portfolio</li>
+          <li>
+            <NavBarLink to="/">About Me</NavBarLink>
+          </li>
+          <li>
+            <NavBarLink to="/portfolio">Portfolio</NavBarLink>
+          </li>
         </NavItems>
         <MenuButton>
           <p>Menu</p>
@@ -278,6 +302,8 @@ const NavBar = props => {
 
 NavBar.propTypes = {
   transparent: PropTypes.bool,
+  logoTitle: PropTypes.string,
+  logoSubtitle: PropTypes.string,
 }
 
 NavBar.defaultProps = {
