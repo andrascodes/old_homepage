@@ -1,30 +1,28 @@
+import PropTypes, { any } from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import Button from '../Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
 import React from 'react'
 
 const StyledBanner = styled.div`
   color: white;
-  height: 75vh;
   max-height: 50rem;
-  ${props =>
+  height: 60vh;
+  min-height: 22.7rem;
+  /* ${props =>
     props.index === true
       ? css`
+          height: 75vh;
           min-height: 28.4rem;
         `
       : css`
+          height: 60vh;
           min-height: 22.7rem;
-        `}
+        `} */
 
   align-items: center;
-  background-attachment: fixed;
-  background-image: url('https://gatsby-forty.surge.sh/static/banner-22e3335cf4be5dddb7a51870b0e3203f.jpg');
-  /* background-position: 50%; */
-  background-position: center 0;
-  background-repeat: no-repeat;
-  background-size: cover;
   border-bottom: 0 !important;
   cursor: default;
   display: flex;
@@ -32,13 +30,23 @@ const StyledBanner = styled.div`
   position: relative;
 
   @media screen and (max-width: 1680px) {
-    min-height: 23.35rem;
     padding: 2rem 0 0 0;
+    min-height: 23.35rem;
   }
 
   @media screen and (max-width: 1280px) {
     padding: 1.85rem 0 0 0;
-    min-height: 20rem;
+    min-height: 14.65rem;
+    height: 54vh;
+    /* ${props =>
+      props.index === true
+        ? css`
+            min-height: 20rem;
+          `
+        : css`
+            min-height: 14.65rem;
+            height: 54vh;
+          `} */
   }
 
   @media screen and (max-width: 980px) {
@@ -54,7 +62,15 @@ const StyledBanner = styled.div`
   }
 
   @media screen and (max-width: 480px) {
-    padding: 5.7rem 0 2.08rem 0;
+    padding: 5.7rem 0 0rem 0;
+    /* ${props =>
+      props.index === true
+        ? css`
+            padding: 5.7rem 0 2.08rem 0;
+          `
+        : css`
+            padding: 5.7rem 0 0rem 0;
+          `} */
   }
 
   @media screen and (max-width: 360px) {
@@ -72,7 +88,7 @@ const StyledInner = styled.div`
   transform: translateX(-0.5em);
   transition: opacity 1.5s ease, transform 0.5s ease-out, filter 0.5s ease,
     -webkit-filter 0.5s ease;
-  z-index: 2;
+  z-index: 3;
 
   ${props =>
     props.loaded === true || props.loaded === undefined
@@ -109,7 +125,9 @@ const StyledInner = styled.div`
 `
 
 const StyledColorOverlay = styled.div`
-  background-color: #242943;
+  /* background-color: ${props =>
+    props.index === true ? '#242943' : '#8d82c4'}; */
+  /* background-color: #1e272e; */
   content: '';
   display: block;
   height: 100%;
@@ -121,7 +139,8 @@ const StyledColorOverlay = styled.div`
   transition: opacity 2.5s ease;
   transition-delay: 0.75s;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
+  overflow: hidden;
 `
 
 const StyledTitle = styled.h1`
@@ -228,34 +247,32 @@ const StyledButtonIcon = styled(FontAwesomeIcon)`
   margin-left: 0.7rem;
 `
 
+const StyledImg = styled(Img)`
+  & img {
+    object-fit: cover !important;
+    /* object-position: 50% 38% !important; */
+    object-position: 50% 45% !important;
+    font-family: ' object-fit: cover !important; object-position: 50% 50% !important; ';
+  }
+`
+
 const Banner = props => {
   return (
     <StyledBanner {...props}>
       <StyledInner {...props}>
-        {props.index === true ? (
-          <StyledTitle>Hi, my name is Forty</StyledTitle>
-        ) : (
-          <StyledTitle>Landing</StyledTitle>
-        )}
+        <StyledTitle>{props.title}</StyledTitle>
         <StyledHorizontalLine />
         <StyledSubtitleContainer>
-          {props.index === true ? (
-            <StyledSubtitle>
-              A responsive site template designed by HTML5 UP
-              <br />
-              and released under the creative commons.
-            </StyledSubtitle>
-          ) : (
-            <StyledSubtitle>
-              Lorem ipsum dolor sit amet nullam consequat
-              <br />
-              sed veroeros. tempus adipiscing nulla.
-            </StyledSubtitle>
-          )}
+          <StyledSubtitle>
+            {props.subtitle
+              .map(text => [text, <br />])
+              .flat()
+              .slice(0, -1)}
+          </StyledSubtitle>
 
-          {props.index === true ? (
-            <Button>
-              Get started
+          {props.withButton === true ? (
+            <Button to="/portfolio">
+              Check Out My Work
               <StyledButtonIcon icon="arrow-right" />
             </Button>
           ) : (
@@ -263,17 +280,36 @@ const Banner = props => {
           )}
         </StyledSubtitleContainer>
       </StyledInner>
-      <StyledColorOverlay />
+      <StyledImg
+        title={'Background image'}
+        alt="Background image"
+        fluid={props.bgImage.childImageSharp.fluid}
+        backgroundColor={props.bgColor}
+        style={{
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 1,
+        }}
+      />
+      {/* <StyledColorOverlay {...props} /> */}
     </StyledBanner>
   )
 }
 
 Banner.propTypes = {
-  index: PropTypes.bool,
+  withButton: PropTypes.bool,
+  title: PropTypes.string,
+  subtitle: PropTypes.arrayOf(PropTypes.string),
+  bgImage: PropTypes.object,
+  bgColor: PropTypes.string,
 }
 
 Banner.defaultProps = {
-  index: false,
+  withButton: false,
+  bgColor: '#000',
 }
 
 export default Banner
