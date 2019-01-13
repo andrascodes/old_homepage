@@ -4,11 +4,12 @@ import styled from 'styled-components'
 
 const StyledTile = styled.div`
   color: white;
-  width: 40%;
+  width: 100%;
+  /* width: 40%;
   :nth-child(4n - 1),
   :nth-child(4n - 2) {
     width: 60%;
-  }
+  } */
 
   height: 40vh;
   max-height: 40rem;
@@ -52,7 +53,7 @@ const StyledTile = styled.div`
   background-size: cover;
 
   @media screen and (max-width: 980px) {
-    width: 50% !important;
+    /* width: 50% !important; */
   }
 
   @media screen and (max-width: 480px) {
