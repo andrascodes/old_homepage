@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components'
 
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const StyledButton = styled.button`
+const createStyledButton = LinkComponent => styled(LinkComponent)`
   border: 0;
   border-radius: 0;
   cursor: pointer;
@@ -96,13 +97,30 @@ const StyledButton = styled.button`
           }
         `}
 
+    ${props =>
+      props.alternate === true
+        ? css`
+            background-color: #000;
+            color: #fff;
+          `
+        : ''}
+
   &:focus {
     outline: none;
   }
 `
 
 const Button = props => {
-  return <StyledButton {...props}>{props.children}</StyledButton>
+  if (props.to.startsWith('http')) {
+    const HTMLLink = props => (
+      <a target="_blank" rel="noopener noreferrer" href={props.to} {...props} />
+    )
+    const StyledButton = createStyledButton(HTMLLink)
+    return <StyledButton {...props}>{props.children}</StyledButton>
+  } else {
+    const StyledButton = createStyledButton(Link)
+    return <StyledButton {...props}>{props.children}</StyledButton>
+  }
 }
 
 Button.propTypes = {
@@ -112,13 +130,17 @@ Button.propTypes = {
   fit: PropTypes.bool,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
+  to: PropTypes.string,
+  alternate: PropTypes.bool,
 }
 
 Button.defaultProps = {
+  to: '/',
   size: 'medium',
   primary: false,
   fit: false,
   disabled: false,
+  alternate: false,
 }
 
 export default Button
