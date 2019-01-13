@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const StyledContact = styled.div`
   color: #fff;
-  background-color: #2a2f4a;
+  background-color: #000;
   border-top: 1px solid rgba(212, 212, 255, 0.1);
   display: flex;
   flex-direction: column;
@@ -107,7 +107,7 @@ const SocialButtonTitle = styled.div`
   }
 `
 
-const SocialButtonText = styled.div`
+const SocialButtonTextLink = styled.a`
   text-align: center;
   opacity: 0.8;
   font-size: 0.9rem;
@@ -133,6 +133,10 @@ const SocialButtonText = styled.div`
   @media screen and (max-width: 1000px) {
     font-size: 0.5rem;
   }
+
+  &:hover {
+    color: #9bf1ff;
+  }
 `
 
 const Contact = () => (
@@ -143,34 +147,82 @@ const Contact = () => (
     <SocialButtonList>
       <SocialButtonContainer>
         <SocialButtonTitleContainer>
-          <SocialButton size="large" icon="envelope" />
+          <a
+            rel="noopener noreferrer"
+            href="mailto:andrew0szucs@gmail.com"
+            target="_blank"
+          >
+            <SocialButton size="large" icon="envelope" />
+          </a>
           <SocialButtonTitle>Email</SocialButtonTitle>
         </SocialButtonTitleContainer>
-        <SocialButtonText>andrew0szucs[at]gmail.com</SocialButtonText>
+        <SocialButtonTextLink
+          rel="noopener noreferrer"
+          href="mailto:andrew0szucs@gmail.com"
+          target="_blank"
+        >
+          andrew0szucs[at]gmail.com
+        </SocialButtonTextLink>
       </SocialButtonContainer>
 
       <SocialButtonContainer>
         <SocialButtonTitleContainer>
-          <SocialButton size="large" icon={['fab', 'linkedin']} />
+          <a
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/andrewszucs"
+            target="_blank"
+          >
+            <SocialButton size="large" icon={['fab', 'linkedin']} />
+          </a>
           <SocialButtonTitle>LinkedIn</SocialButtonTitle>
         </SocialButtonTitleContainer>
-        <SocialButtonText>linkedin.com/in/andrewszucs</SocialButtonText>
+        <SocialButtonTextLink
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/andrewszucs"
+          target="_blank"
+        >
+          linkedin.com/in/andrewszucs
+        </SocialButtonTextLink>
       </SocialButtonContainer>
 
       <SocialButtonContainer>
         <SocialButtonTitleContainer>
-          <SocialButton size="large" icon={['fab', 'github']} />
+          <a
+            rel="noopener noreferrer"
+            href="https://github.com/andrewszucs"
+            target="_blank"
+          >
+            <SocialButton size="large" icon={['fab', 'github']} />
+          </a>
           <SocialButtonTitle>Github</SocialButtonTitle>
         </SocialButtonTitleContainer>
-        <SocialButtonText>github.com/andrewszucs</SocialButtonText>
+        <SocialButtonTextLink
+          rel="noopener noreferrer"
+          href="https://github.com/andrewszucs"
+          target="_blank"
+        >
+          github.com/andrewszucs
+        </SocialButtonTextLink>
       </SocialButtonContainer>
 
       <SocialButtonContainer>
         <SocialButtonTitleContainer>
-          <SocialButton size="large" icon={['fab', 'twitter']} />
+          <a
+            rel="noopener noreferrer"
+            href="https://twitter.com/andrewszucs"
+            target="_blank"
+          >
+            <SocialButton size="large" icon={['fab', 'twitter']} />
+          </a>
           <SocialButtonTitle>Twitter</SocialButtonTitle>
         </SocialButtonTitleContainer>
-        <SocialButtonText>twitter.com/andrewszucs</SocialButtonText>
+        <SocialButtonTextLink
+          href="https://twitter.com/andrewszucs"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          twitter.com/andrewszucs
+        </SocialButtonTextLink>
       </SocialButtonContainer>
     </SocialButtonList>
   </StyledContact>
