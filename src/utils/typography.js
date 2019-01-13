@@ -34,7 +34,16 @@ const typography = new Typography({
   googleFonts: [
     {
       name: 'Source Sans Pro',
-      styles: ['300', '300italic', '600', '600italic'],
+      styles: [
+        '300',
+        '300italic',
+        '400',
+        '400italic',
+        '600',
+        '600italic',
+        '700',
+        '700italic',
+      ],
     },
   ],
 })
