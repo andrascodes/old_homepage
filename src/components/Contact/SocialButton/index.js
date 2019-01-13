@@ -10,7 +10,7 @@ const StyledButton = styled.button`
   justify-content: center;
   border-radius: 100%;
   border: none;
-  color: #2a2f4a;
+  color: #000;
   background-color: #fff;
   cursor: pointer;
 
@@ -38,13 +38,14 @@ const StyledButton = styled.button`
         return css`
           height: 1.75rem;
           width: 1.75rem;
+          margin-right: 0.75rem;
         `
     }
   }}
 
   &:hover {
     background-color: #9bf1ff;
-    color: #242943 !important;
+    color: #000 !important;
   }
 
   &:active {
