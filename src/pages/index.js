@@ -1,11 +1,13 @@
 import Button from '../components/Button'
-import CVPdf from '../assets/Andras_Szucs_CV.pdf'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+
+const CVPdf =
+  'https://drive.google.com/open?id=17Hun2x2fNQYaZrbWdZHZoVxsqipiJkX6'
 
 const Content = styled.div`
   background-color: #fff;
