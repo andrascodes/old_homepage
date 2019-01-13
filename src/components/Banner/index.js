@@ -266,7 +266,7 @@ const Banner = props => {
           <StyledSubtitle>
             {props.subtitle
               .map(text => [text, <br />])
-              .flat()
+              .reduce((flat, toFlatten) => flat.concat(toFlatten))
               .slice(0, -1)}
           </StyledSubtitle>
 
