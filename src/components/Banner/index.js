@@ -8,6 +8,7 @@ import React from 'react'
 
 const StyledBanner = styled.div`
   color: white;
+  background-color: ${props => props.bgColor};
   max-height: 50rem;
   height: 60vh;
   min-height: 22.7rem;
@@ -124,24 +125,24 @@ const StyledInner = styled.div`
   }
 `
 
-const StyledColorOverlay = styled.div`
-  /* background-color: ${props =>
-    props.index === true ? '#242943' : '#8d82c4'}; */
-  /* background-color: #1e272e; */
-  content: '';
-  display: block;
-  height: 100%;
-  left: 0;
-  opacity: 0.85;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  transition: opacity 2.5s ease;
-  transition-delay: 0.75s;
-  width: 100%;
-  z-index: 2;
-  overflow: hidden;
-`
+// const StyledColorOverlay = styled.div`
+//   /* background-color: ${props =>
+//     props.index === true ? '#242943' : '#8d82c4'}; */
+//   /* background-color: #1e272e; */
+//   content: '';
+//   display: block;
+//   height: 100%;
+//   left: 0;
+//   opacity: 0.85;
+//   pointer-events: none;
+//   position: absolute;
+//   top: 0;
+//   transition: opacity 2.5s ease;
+//   transition-delay: 0.75s;
+//   width: 100%;
+//   z-index: 2;
+//   overflow: hidden;
+// `
 
 const StyledTitle = styled.h1`
   font-size: 3.08rem;
@@ -248,11 +249,27 @@ const StyledButtonIcon = styled(FontAwesomeIcon)`
 `
 
 const StyledImg = styled(Img)`
+  height: 100%;
+
   & img {
     object-fit: cover !important;
     /* object-position: 50% 38% !important; */
     object-position: 50% 45% !important;
     font-family: ' object-fit: cover !important; object-position: 50% 50% !important; ';
+  }
+
+  @media screen and (max-width: 736px) {
+    & img {
+      object-position: 50% 90% !important;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    height: unset;
+
+    & picture img {
+      height: unset;
+    }
   }
 `
 
@@ -290,7 +307,6 @@ const Banner = props => {
           left: 0,
           top: 0,
           width: '100%',
-          height: '100%',
           zIndex: 1,
         }}
       />
