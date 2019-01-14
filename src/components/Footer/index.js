@@ -18,14 +18,29 @@ const StyledInner = styled.div`
   padding: ${props => (props.withContacts ? '4rem 0 3rem 0' : '2rem 0 2rem 0')};
 
   @media screen and (max-width: 480px) {
+    margin: 0 auto;
     text-align: center;
-    align-self: center;
+    width: 100%;
+    max-width: unset;
   }
 `
 
 const ContactIcons = styled.ul`
   display: flex;
+  align-items: center;
   margin: 0 0 1.5rem 0;
+
+  & button {
+    margin-right: 0.75rem;
+  }
+
+  & a:last-child button {
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 480px) {
+    justify-content: center;
+  }
 `
 
 const Copyright = styled.div`

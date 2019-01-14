@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 100%;
+  border-radius: 50%;
   border: none;
   color: #000;
   background-color: #fff;
@@ -38,7 +38,6 @@ const StyledButton = styled.button`
         return css`
           height: 1.75rem;
           width: 1.75rem;
-          margin-right: 0.75rem;
         `
     }
   }}
