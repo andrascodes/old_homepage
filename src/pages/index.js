@@ -72,6 +72,20 @@ const Description = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
 
+  a {
+    text-decoration: underline;
+    color: #0652dd;
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: #4c8afb;
+  }
+
+  a:active {
+    color: #4c8afb;
+  }
+
   & p {
     margin-bottom: 0.75rem;
   }
@@ -181,34 +195,81 @@ const IndexPage = props => {
           </MobileButtonContainer>
           <Description>
             <p>
-              My full name is András Szücs and I was born in Hungary. I studied
-              Computer Science at the Eötvös Loránd University in Budapest.
-              During my studies I participated in the Innovation Lab at the
-              university where I gained practical experience in validating
-              startup ideas and creating feasible business models. Thanks to
-              this, I got to participate in a few startup projects such as
-              Pulmoment and Chatler.AI. After graduating, I have been accepted
-              to the EIT Digital Master School, a two-year double degree
-              combining Technical programmes with Innovation and
-              Entrepreneurship skills. I did my first year at KTH Royal
-              Institute of Technology in Stockholm and currently I’m finishing
-              my second year at Université Paris-Sud, majoring in Human-Computer
-              Interaction and Design.
+              My full name is <b>András Szücs</b> and I was born in Hungary. I
+              studied <b>Computer Science</b> at the{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://inf.elte.hu/"
+              >
+                Eötvös Loránd University
+              </a>{' '}
+              in Budapest. During my studies I participated in the{' '}
+              <b>Innovation Lab</b> at the university where I gained practical
+              experience in{' '}
+              <b>
+                validating startup ideas and creating feasible business models
+              </b>
+              . Thanks to this, I got to participate in a few startup projects
+              such as{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://pulmoment.com/"
+              >
+                Pulmoment
+              </a>{' '}
+              and{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://chatler.ai/"
+              >
+                Chatler.AI
+              </a>
+              . After graduating, I have been accepted to the{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://masterschool.eitdigital.eu/education/"
+              >
+                EIT Digital Master School
+              </a>
+              , a two-year double degree combining Technical programmes with{' '}
+              <b>Innovation and Entrepreneurship</b> skills. I did my first year
+              at{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.kth.se/en"
+              >
+                KTH Royal Institute of Technology
+              </a>{' '}
+              in Stockholm and currently I’m finishing my second year at{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.universite-paris-saclay.fr/en/education/master/m2-interaction-human-computer-interaction-hci#presentation-m2"
+              >
+                Université Paris-Sud
+              </a>
+              , majoring in <b>Human-Computer Interaction and Design</b>.
             </p>
             <p>
-              My main expertise is in Full Stack Javascript Development. On the
-              Frontend, I like to use React and on the backend Node.js. Thanks
-              to my studies and projects I have also picked up skills in User
-              Experience Design and Business. For this reason I can contribute
-              to a team as a Designer (in User Research or Prototyping) or as
-              Product Manager as well.
+              My main expertise is in <b>Full Stack Javascript Development</b>.
+              On the Frontend, I like to use <b>React</b> and on the backend{' '}
+              <b>Node.js</b>. Thanks to my studies and projects I have also
+              picked up skills in <b>User Experience Design</b> and{' '}
+              <b>Business</b>. For this reason I can contribute to a team as a
+              Designer (in <b>User Research</b> or <b>Prototyping</b>) or as{' '}
+              <b>Product Manager</b> as well.
             </p>
             <p>
-              Currently, I am looking for opportunities in Paris, London or
-              Stockholm. Ideally, I’d like to find a position where I can
-              combine my software development and design skills at a startup or
-              at a fast-paced product development team in a larger company.
-              Don’t hesitate to contact me if you're recruiting!
+              Currently, I am looking for opportunities in <b>Paris, London</b>{' '}
+              or <b>Stockholm</b>. Ideally, I’d like to find a position where I
+              can <b>combine my software development and design skills </b> at a
+              startup or at a fast-paced product development team in a larger
+              company. <b>Don’t hesitate to contact me if you're recruiting!</b>
             </p>
           </Description>
         </Inner>
