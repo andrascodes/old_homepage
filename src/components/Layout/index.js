@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import {
   faAngleRight,
   faArrowRight,
@@ -15,10 +16,14 @@ import {
 import Banner from '../Banner'
 import Contact from '../Contact'
 import Footer from '../Footer'
+import Helmet from 'react-helmet'
 import NavBar from '../NavBar'
 import PropTypes from 'prop-types'
+import ReactGA from 'react-ga'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import styled from 'styled-components'
+
+ReactGA.initialize('UA-132438184-1')
 
 library.add(
   faAngleRight,
@@ -63,25 +68,43 @@ class Layout extends Component {
 
   render() {
     return (
-      <StyledPage>
-        <NavBar
-          transparent
-          loaded={true}
-          logoTitle={this.props.logoTitle}
-          logoSubtitle={this.props.logoSubtitle}
-        />
-        <Banner
-          withButton={this.props.withButton}
-          loaded={true}
-          title={this.props.title}
-          subtitle={this.props.subtitle}
-          bgImage={this.props.bannerBgImage}
-          bgColor={this.props.bannerBgColor}
-        />
-        {this.props.children}
-        {this.props.index === true ? <Contact /> : ''}
-        <Footer withContacts={this.props.index === false} />
-      </StyledPage>
+      <StaticQuery
+        query={graphql`
+          query {
+            site {
+              siteMetadata {
+                title
+              }
+            }
+          }
+        `}
+        render={data => (
+          <StyledPage>
+            <Helmet
+              title={`${data.site.siteMetadata.title} - ${
+                this.props.pageTitle
+              }`}
+            />
+            <NavBar
+              transparent
+              loaded={true}
+              logoTitle={this.props.logoTitle}
+              logoSubtitle={this.props.logoSubtitle}
+            />
+            <Banner
+              withButton={this.props.withButton}
+              loaded={true}
+              title={this.props.title}
+              subtitle={this.props.subtitle}
+              bgImage={this.props.bannerBgImage}
+              bgColor={this.props.bannerBgColor}
+            />
+            {this.props.children}
+            {this.props.index === true ? <Contact /> : ''}
+            <Footer withContacts={this.props.index === false} />
+          </StyledPage>
+        )}
+      />
     )
   }
 }

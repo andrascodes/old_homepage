@@ -1,8 +1,8 @@
 import Button from '../components/Button'
-import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import React from 'react'
+import ReactGA from 'react-ga'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
@@ -153,6 +153,23 @@ const IndexPage = props => {
   const profilePicOneData = props.data.ProfilePicOne
   const profilePicTwoData = props.data.ProfilePicTwo
 
+  const DownloadCVButton = props => (
+    <Button
+      to={CVPdf}
+      size="medium"
+      primary
+      alternate
+      onClick={ReactGA.event({
+        category: 'Button Click',
+        action: 'Download CV',
+        label: 'Download CV',
+      })}
+      {...props}
+    >
+      Download My CV
+    </Button>
+  )
+
   return (
     <Layout
       index
@@ -166,8 +183,8 @@ const IndexPage = props => {
       ]}
       bannerBgImage={bannerBgImgData}
       bannerBgColor="#000"
+      pageTitle="About Me"
     >
-      <Helmet title="András Szücs - About Me" />
       <Content>
         <Inner>
           <Pictures>
@@ -183,15 +200,11 @@ const IndexPage = props => {
               sizes={profilePicTwoData.childImageSharp.sizes}
             />
             <DesktopButtonContainer>
-              <Button to={CVPdf} size="medium" primary alternate>
-                Download My CV
-              </Button>
+              <DownloadCVButton />
             </DesktopButtonContainer>
           </Pictures>
           <MobileButtonContainer>
-            <Button to={CVPdf} size="medium" primary alternate>
-              Download My CV
-            </Button>
+            <DownloadCVButton />
           </MobileButtonContainer>
           <Description>
             <p>

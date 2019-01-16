@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import ReactGA from 'react-ga'
 
 const StyledNavBar = styled.div`
   height: 3.07rem;
@@ -276,7 +277,16 @@ const NavBar = props => {
             <NavBarLink to="/">About Me</NavBarLink>
           </li>
           <li>
-            <NavBarLink to="/portfolio">Portfolio</NavBarLink>
+            <NavBarLink
+              to="/portfolio"
+              onClick={ReactGA.event({
+                category: 'Button Click',
+                action: 'Click Portfolio',
+                label: 'Click Portfolio',
+              })}
+            >
+              Portfolio
+            </NavBarLink>
           </li>
         </NavItems>
         <MenuButton>

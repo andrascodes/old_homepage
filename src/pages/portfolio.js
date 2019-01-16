@@ -7,7 +7,6 @@ import PortfolioItem, {
   TitlePitch,
 } from '../components/PortfolioItem'
 import React, { Fragment } from 'react'
-import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
@@ -35,8 +34,8 @@ const PortfolioPage = props => {
       ]}
       bannerBgImage={bannerBgImgData}
       bannerBgColor="#110023"
+      pageTitle="Portfolio"
     >
-      <Helmet title="András Szücs - Portfolio" />
       <div>
         <PortfolioItem
           images={trailImgData}
