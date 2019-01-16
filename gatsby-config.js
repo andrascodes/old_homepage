@@ -1,6 +1,8 @@
+const GATrackingID = 'UA-132438184-1'
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'András Szücs',
   },
   plugins: [
     {
@@ -16,6 +18,12 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: GATrackingID,
       },
     },
     'gatsby-transformer-sharp',
