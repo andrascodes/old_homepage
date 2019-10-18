@@ -148,7 +148,7 @@ const MobileButtonContainer = styled.div`
 //   }
 // `
 
-const Emoji = styled.span`
+const Emoji = styled.div`
   margin-right: 10px;
 `
 
