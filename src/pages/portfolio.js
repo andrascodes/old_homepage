@@ -14,6 +14,7 @@ import { graphql } from 'gatsby'
 const PortfolioPage = props => {
   const bannerBgImgData = props.data.BannerBgImgData
   const { edges: trailImgData } = props.data.TrailImgs
+  const { edges: coliviaImgData } = props.data.ColiviaImgs
   const { edges: lifecalendarImgData } = props.data.LifeCalendarImgs
   const { edges: meetupBotImgData } = props.data.MeetupBotImgs
   const { edges: qrAnalyticsImgData } = props.data.QRAnalyticsImgs
@@ -74,6 +75,49 @@ const PortfolioPage = props => {
             company bringing native quality gaming into the browsers. Worked
             together with the designer and the CTO to rewrite the frontend
             client from EmberJS to ReactJS.`
+          }
+        />
+
+        <PortfolioItem
+          images={coliviaImgData}
+          color="#1A224C"
+          bgColor="#EDE5E1"
+          renderTitleName={() => 'Colivia'}
+          renderTitlePitch={() =>
+            'Making the healthcare staffing process more efficient through better data input tools and data visualization'
+          }
+          renderList={({ color }) => (
+            <Fragment>
+              <ListItem color={color}>
+                <ListItemTitle>Company:</ListItemTitle>
+                <ListItemInfo color={color}>
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://colivia.se/"
+                    target="_blank"
+                  >
+                    Colivia Sweden AB
+                  </a>
+                </ListItemInfo>
+              </ListItem>
+              <ListItem color={color}>
+                <ListItemTitle>Role:</ListItemTitle>
+                <ListItemInfo color={color}>
+                  Full Stack Developer &#38; UX Designer
+                </ListItemInfo>
+              </ListItem>
+              <ListItem color={color}>
+                <ListItemTitle>Date:</ListItemTitle>
+                <ListItemInfo color={color}>2019. March-September</ListItemInfo>
+              </ListItem>
+            </Fragment>
+          )}
+          renderDescription={() =>
+            `Designed and developed an in-house system for digitalizing healthcare
+             job assignments and visualizing them to the company’s sales staff. 
+             Ran an iterative participatory design process to create a UI that eased 
+             the sales employees every-day workflow immensely. 
+             Then implemented the design using React, Apollo, GraphQL and Node.js`
           }
         />
 
@@ -426,6 +470,17 @@ export const pageQuery = graphql`
           quality: 90
         ) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    ColiviaImgs: allFile(
+      sort: { order: ASC, fields: [absolutePath] }
+      filter: { relativePath: { regex: "/projects/colivia/.*.png/" } }
+    ) {
+      edges {
+        node {
+          ...sizedImages
         }
       }
     }
