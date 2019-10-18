@@ -148,27 +148,31 @@ const MobileButtonContainer = styled.div`
 //   }
 // `
 
+const Emoji = styled.span`
+  margin-right: 10px;
+`
+
+const DownloadCVButton = props => (
+  <Button
+    to={CVPdf}
+    size="medium"
+    primary
+    alternate
+    onClick={ReactGA.event({
+      category: 'Button Click',
+      action: 'Download CV',
+      label: 'Download CV',
+    })}
+    {...props}
+  >
+    Download My CV
+  </Button>
+)
+
 const IndexPage = props => {
   const bannerBgImgData = props.data.BannerBgImgData
   const profilePicOneData = props.data.ProfilePicOne
   const profilePicTwoData = props.data.ProfilePicTwo
-
-  const DownloadCVButton = props => (
-    <Button
-      to={CVPdf}
-      size="medium"
-      primary
-      alternate
-      onClick={ReactGA.event({
-        category: 'Button Click',
-        action: 'Download CV',
-        label: 'Download CV',
-      })}
-      {...props}
-    >
-      Download My CV
-    </Button>
-  )
 
   return (
     <Layout
@@ -208,81 +212,159 @@ const IndexPage = props => {
           </MobileButtonContainer>
           <Description>
             <p>
-              My full name is <b>András Szücs</b> and I was born in Hungary. I
-              studied <b>Computer Science</b> at the{' '}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://inf.elte.hu/"
-              >
-                Eötvös Loránd University
-              </a>{' '}
-              in Budapest. During my studies I participated in the{' '}
-              <b>Innovation Lab</b> at the university where I gained practical
-              experience in{' '}
+              My name is <b>András Szücs</b> and I am a{' '}
+              <b>full-stack web developer</b> from{' '}
               <b>
-                validating startup ideas and creating feasible business models
+                Hungary{' '}
+                <span role="img" aria-label="Hungary">
+                  🇭🇺
+                </span>
               </b>
-              . Thanks to this, I got to participate in a few startup projects
-              such as{' '}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://pulmoment.com/"
-              >
-                Pulmoment
-              </a>{' '}
-              and{' '}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://chatler.ai/"
-              >
-                Chatler.AI
-              </a>
-              . After graduating, I have been accepted to the{' '}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://masterschool.eitdigital.eu/education/"
-              >
-                EIT Digital Master School
-              </a>
-              , a two-year double degree combining Technical programmes with{' '}
-              <b>Innovation and Entrepreneurship</b> skills. I did my first year
-              at{' '}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.kth.se/en"
-              >
-                KTH Royal Institute of Technology
-              </a>{' '}
-              in Stockholm and currently I’m finishing my second year at{' '}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.universite-paris-saclay.fr/en/education/master/m2-interaction-human-computer-interaction-hci#presentation-m2"
-              >
-                Université Paris-Sud
-              </a>
-              , majoring in <b>Human-Computer Interaction and Design</b>.
+              , based in <b>Stockholm</b>,{' '}
+              <span role="img" aria-label="Sweden">
+                🇸🇪
+              </span>
+              .
             </p>
-            <p>
-              My main expertise is in <b>Full Stack Javascript Development</b>.
-              On the Frontend, I like to use <b>React</b> and on the backend{' '}
-              <b>Node.js</b>. Thanks to my studies and projects I have also
-              picked up skills in <b>User Experience Design</b> and{' '}
-              <b>Business</b>. For this reason I can contribute to a team as a
-              Designer (in <b>User Research</b> or <b>Prototyping</b>) or as{' '}
-              <b>Product Manager</b> as well.
+            <p style={{ display: 'flex' }}>
+              <Emoji role="img" aria-label="Education">
+                <span role="img" aria-label="Education">
+                  👨‍🎓
+                </span>
+              </Emoji>
+              <div>
+                <div>
+                  <b>BSc</b> Computer Science (
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://www.elte.hu/"
+                    target="_blank"
+                  >
+                    ELTE
+                  </a>
+                  )
+                </div>
+                <div>
+                  <b>MSc</b> Human-Computer Interaction and Design (
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://www.kth.se/"
+                    target="_blank"
+                  >
+                    KTH
+                  </a>
+                  ,{' '}
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://www.u-psud.fr/"
+                  >
+                    U-PSUD
+                  </a>
+                  )
+                </div>
+                <div>
+                  <b>Minor</b> in Innovation and Entrepreneurship (
+                  <a
+                    href="https://masterschool.eitdigital.eu/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    EIT
+                  </a>
+                  )
+                </div>
+              </div>
             </p>
-            <p>
-              Currently, I am looking for opportunities in <b>Paris, London</b>{' '}
-              or <b>Stockholm</b>. Ideally, I’d like to find a position where I
-              can <b>combine my software development and design skills </b> at a
-              startup or at a fast-paced product development team in a larger
-              company. <b>Don’t hesitate to contact me if you're recruiting!</b>
+
+            <p style={{ display: 'flex' }}>
+              <Emoji>
+                <span role="img" aria-label="Professional Experience">
+                  👨‍💻
+                </span>
+              </Emoji>
+              <div>
+                <div>
+                  I have been helping small and medium-size companies with their
+                  product development needs for the past{' '}
+                  <b>{new Date().getFullYear() - 2015} years</b>. I have{' '}
+                  <b>advised early stage startups</b> like{' '}
+                  <a
+                    href="https://pulmoment.com/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Pulmoment
+                  </a>{' '}
+                  and{' '}
+                  <a
+                    href="http://bestreply.ai"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Chatler.AI
+                  </a>
+                  , going from zero to having a feasible product strategy and
+                  secured initial funding. Moreover, I{' '}
+                  <b>designed and developed complete web applications</b> for
+                  companies like{' '}
+                  <a
+                    href="https://www.trail.gg/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Trail Games
+                  </a>{' '}
+                  and{' '}
+                  <a
+                    href="https://colivia.se/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Colivia
+                  </a>
+                  .
+                </div>
+              </div>
+            </p>
+
+            <p style={{ display: 'flex' }}>
+              <Emoji>
+                <span role="img" aria-label="Competences">
+                  🧠
+                </span>
+              </Emoji>
+              <div>
+                <div>
+                  I have a <b>deep understanding of Javascript</b>, which allows
+                  me to quickly get up to speed with any codebase or new web
+                  technology. I am <b>very experienced</b> in using{' '}
+                  <b>React, Node.js, Typescript, GraphQL, SQL</b> and <b>AWS</b>
+                  . I also have experience working as a <b>UX Designer</b> on
+                  new product ideas, so I’m able to{' '}
+                  <b>
+                    provide value in any part of the product development
+                    workflow
+                  </b>
+                  .
+                </div>
+              </div>
+            </p>
+
+            <p style={{ display: 'flex' }}>
+              <Emoji>
+                <span role="img" aria-label="Announcements">
+                  ‼️
+                </span>
+              </Emoji>
+              <div>
+                <div>
+                  <b>
+                    Currently, I am looking for remote development opportunities
+                    all over Europe.
+                  </b>
+                </div>
+              </div>
             </p>
           </Description>
         </Inner>
