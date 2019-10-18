@@ -1,4 +1,3 @@
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import SocialButton from '../Contact/SocialButton'
@@ -58,7 +57,11 @@ const Footer = props => {
       <StyledFooter>
         <StyledInner {...props}>
           <ContactIcons>
-            <a href="mailto:andrew0szucs@gmail.com" target="_blank">
+            <a
+              rel="noopener noreferrer"
+              href="mailto:andrew0szucs@gmail.com"
+              target="_blank"
+            >
               <SocialButton icon="envelope" />
             </a>
             <a
