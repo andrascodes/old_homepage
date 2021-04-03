@@ -7,7 +7,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 const CVPdf =
-  'https://drive.google.com/open?id=17Hun2x2fNQYaZrbWdZHZoVxsqipiJkX6'
+  'https://drive.google.com/file/d/17Hun2x2fNQYaZrbWdZHZoVxsqipiJkX6/view?usp=sharing'
 
 const Content = styled.div`
   background-color: #fff;
