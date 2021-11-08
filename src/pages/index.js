@@ -7,7 +7,7 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 const CVPdf =
-  'https://drive.google.com/file/d/17Hun2x2fNQYaZrbWdZHZoVxsqipiJkX6/view?usp=sharing'
+  'https://drive.google.com/file/d/1HwqcIvxzIjMB-fQZG49YeklPnsvFaq7B/view?usp=sharing'
 
 const Content = styled.div`
   background-color: #fff;
